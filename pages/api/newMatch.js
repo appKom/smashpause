@@ -12,8 +12,6 @@ export default async function handler(req, res) {
   mongoose.connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
     user: username,
     pass: password,
     dbName: dbname,
@@ -22,16 +20,16 @@ export default async function handler(req, res) {
 
   // Get all the state we need for the page
 
-  if (req.body.players && req.body.winner) {
+  if (req.body.player1 && req.body.player2 && req.body.winnerID) {
     Match.create(
-      { players: req.body.players, amount: req.body.winner },
+      { player1: req.body.player1, player2: req.body.player2, winnerID: req.body.winnerID },
       (err, small) => {
-        if (err) console.log(err);
+        if (err) res.statusCode = 500;
         // saved!
       }
     );
     res.statusCode = 200;
-  } else res.statusCode = 500;
+  } else res.statusCode = 400;
 
   res.end(JSON.stringify({}));
 }

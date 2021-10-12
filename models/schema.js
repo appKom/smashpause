@@ -5,10 +5,8 @@ delete mongoose.connection.models["Users"];
 
 const MatchSchema = new mongoose.Schema(
   {
-    id: { type: Number },
-    players: [{
-        userID: {type: String},
-    }],
+    player1: {type: String},
+    player2: {type: String},
     winnerID: {type: String}
   },
   { autoCreate: true, timestamps: true }
