@@ -1,5 +1,8 @@
 import mongoose from 'mongoose';
 
+
+delete mongoose.connection.models["Matches"];
+
 const MatchSchema = new mongoose.Schema(
   {
     playerIDs: [{ type: String }],

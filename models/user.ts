@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 
+delete mongoose.connection.models["Users"];
+
 const UserSchema = new mongoose.Schema(
   {
     id: { type: Number },
