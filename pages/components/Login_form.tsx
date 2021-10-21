@@ -9,8 +9,10 @@ import { urlObjectKeys } from 'next/dist/shared/lib/utils'
 const Login_form = () => {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
+    const [innerheight, setInnerheight] = useState(800);
 
-
+      
+     
     const SendToHomepage = () => {
 
         Router.push('Test_side')   
@@ -18,7 +20,7 @@ const Login_form = () => {
     return (
         <Box
         pos="relative"
-        h="400px"
+        h="100vh"
         bg="rgba(255,0,0,0.1)"
         _before={{
           content: '""',
@@ -33,14 +35,20 @@ const Login_form = () => {
           opacity: 0.9
         }}
       >
-                 <Stack margin="auto" width="50%" border="1px solid black" align="center" spacing={1}>
-                    <Heading color="red" >Smashpause login</Heading>
+                 <Stack position="relative" 
+                 margin="auto" 
+                 backgroundColor="rgb(200,200,200,0.7)" 
+                 width="50%" 
+                 border="2px solid grey" 
+                 align="center" 
+                 spacing={1}>
+
+                    <Heading color="white" >Smashpause login</Heading>
                     <br/>
-                    <label>Username </label>
-                    <Input border="3px solid white" width="34%" type="text" name="username" id="username"></Input>
+                    <Input backgroundColor="white" border="2px" borderColor="black" width="34%" type="text" name="username" id="username" placeholder = "Username" ></Input>
                     <br/>
                     <label>Passord</label>
-                    <Input border="3px solid white" width="34%" type="password" name="password" id="password"></Input>
+                    <Input backgroundColor="white" border="2px" borderColor="black" width="34%" type="password" name="password" id="password" placeholder="Password"></Input>
                     <br/>
                     <Button func={SendToHomepage}> Logg inn </Button>
                     <br/>  
