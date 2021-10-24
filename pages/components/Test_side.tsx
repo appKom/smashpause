@@ -1,7 +1,6 @@
-import { NextPage } from 'next'
 import React from 'react'
 
-const Test_side :NextPage = () => {
+const Test_side:React.FC = () => {
     return (
         <div>
             <h1>Hei</h1>

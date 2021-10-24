@@ -3,7 +3,7 @@ import {FC, useState} from 'react'
 import Button from './atoms/Button';
 import Login_form from './Login_form';
 
-const Login: FC = () => {
+const Login:React.FC = () => {
     
     return (
         <div>

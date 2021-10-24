@@ -6,16 +6,19 @@ import { Input, Stack, Heading, Box, Image } from "@chakra-ui/react"
 import background_image from "../../public/images/gay.png"
 import { urlObjectKeys } from 'next/dist/shared/lib/utils'
 
-const Login_form = () => {
+const Login_form: React.FC = () => {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
     const [innerheight, setInnerheight] = useState(800);
 
       
      
-    const SendToHomepage = () => {
-
-        Router.push('Test_side')   
+    const SendToHomepage = ():JSX.Element => {
+        return (
+            console.log("hei")
+        )
+        
+        // Router.push('Test_side')   
     }
     return (
         <Box
@@ -35,7 +38,10 @@ const Login_form = () => {
           opacity: 0.9
         }}
       >
-                 <Stack position="relative" 
+                 <Stack 
+                 position="relative"
+                 top="20%"
+                 height ="43vh" 
                  margin="auto" 
                  backgroundColor="rgb(200,200,200,0.7)" 
                  width="50%" 
@@ -43,18 +49,17 @@ const Login_form = () => {
                  align="center" 
                  spacing={1}>
 
-                    <Heading color="white" >Smashpause login</Heading>
+                    <Heading color="white"> Smashpause login </Heading>
                     <br/>
                     <Input backgroundColor="white" border="2px" borderColor="black" width="34%" type="text" name="username" id="username" placeholder = "Username" ></Input>
                     <br/>
-                    <label>Passord</label>
                     <Input backgroundColor="white" border="2px" borderColor="black" width="34%" type="password" name="password" id="password" placeholder="Password"></Input>
                     <br/>
                     <Button func={SendToHomepage}> Logg inn </Button>
                     <br/>  
 
                 </Stack>
-                </Box>
+        </Box>
             
         
     )
