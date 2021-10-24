@@ -1,13 +1,15 @@
 import type { NextPage } from 'next'
 import React, {FC} from "react"
 import { Button, ButtonGroup } from "@chakra-ui/react"
+import { Redirect } from "react-router"
 
 
-type ButtonProps = {
-    name: string;
+interface ButtonProp {
     func: () => JSX.Element;
 }
-const Knapp: FC<ButtonProps> = ( {name, func}: ButtonProps) => {
-    return(<Button onClick={func}>{name}</Button>)
+
+const Knapp:FC<ButtonProp> = ({func}: ButtonProp ) => {
+    return(<Button onClick={func}> Logg inn </Button>)
 }
-export default Button
+
+export default Knapp

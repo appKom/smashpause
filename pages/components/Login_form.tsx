@@ -1,25 +1,29 @@
 import React from 'react'
-import Button from './atoms/Button'
+import Knapp from './atoms/Button'
 import { useState } from 'react'
 import Router from 'next/router'
 import { Input, Stack, Heading, Box, Image } from "@chakra-ui/react"
 import background_image from "../../public/images/gay.png"
 import { urlObjectKeys } from 'next/dist/shared/lib/utils'
+import { useNavigate } from "@reach/router"
 
 const Login_form: React.FC = () => {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
     const [innerheight, setInnerheight] = useState(800);
 
-      
-     
-    const SendToHomepage = ():JSX.Element => {
+    const buttonFunction = ():JSX.Element => {
+        const navigate = useNavigate()
         return (
-            console.log("hei")
+            
+            <div>
+                {navigate("/Test_side")}
+                <h1>hEI</h1>
+            </div>
         )
-        
-        // Router.push('Test_side')   
     }
+
+     
     return (
         <Box
         pos="relative"
@@ -55,7 +59,7 @@ const Login_form: React.FC = () => {
                     <br/>
                     <Input backgroundColor="white" border="2px" borderColor="black" width="34%" type="password" name="password" id="password" placeholder="Password"></Input>
                     <br/>
-                    <Button func={SendToHomepage}> Logg inn </Button>
+                    <Knapp func={buttonFunction} > </Knapp>
                     <br/>  
 
                 </Stack>
