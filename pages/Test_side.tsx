@@ -1,9 +1,13 @@
 import React from 'react'
+import Login_form from './components/Login_form'
+
 
 const Test_side:React.FC = () => {
+
     return (
         <div>
-            <h1>Hei</h1>
+            <h1>hei</h1>
+
         </div>
     )
 }

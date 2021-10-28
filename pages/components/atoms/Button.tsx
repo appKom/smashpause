@@ -1,11 +1,11 @@
 import type { NextPage } from 'next'
 import React, {FC} from "react"
 import { Button, ButtonGroup } from "@chakra-ui/react"
-import { Redirect } from "react-router"
+
 
 
 interface ButtonProp {
-    func: () => JSX.Element;
+    func: () => void;
 }
 
 const Knapp:FC<ButtonProp> = ({func}: ButtonProp ) => {
