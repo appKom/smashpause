@@ -1,5 +1,5 @@
 import React from 'react'
-import Knapp from './atoms/Button'
+import Login_button from './atoms/Login_button'
 import { useState } from 'react'
 import { Input, Stack, Heading, Box, FormControl } from "@chakra-ui/react"
 import { urlObjectKeys } from 'next/dist/shared/lib/utils'
@@ -16,7 +16,7 @@ const Login_form: React.FC = () => {
     
 
     const buttonFunction = ():void => {
-        router.push('Test_side')
+        router.push('Homepage')
     }
 
      
@@ -49,12 +49,13 @@ const Login_form: React.FC = () => {
                  border="2px solid grey" 
                  align="center" 
                  spacing={1}>
-                    <Heading color="white"> Smashpause login </Heading>
+                     <br/>
+                    <Heading color="red.500"> Smashpause login </Heading>
                     <Input backgroundColor="white" border="2px" borderColor="black" width="34%" type="text" name="username" id="username" placeholder = "Username" ></Input>
                     <br/>
                     <Input backgroundColor="white" border="2px" borderColor="black" width="34%" type="password" name="password" id="password" placeholder="Password"></Input>
                     <br/>
-                    <Knapp func={buttonFunction} > </Knapp>
+                    <Login_button func={buttonFunction} > </Login_button>
                     <br/>  
                 </Stack>
         </Box>
