@@ -5,13 +5,14 @@ import { Flex, Spacer } from '@chakra-ui/react'
 import Session_button from './Session_button'
 import Leaderboard_button from './Leaderboard_button'
 import Homepage_button from './Homepage_button'
+import Login_button from './Login_button'
 
 const Navbar:React.FC = () => {
 
     const router = useRouter();
 
     const sessionButton = ():void => {
-        router.push('Session')
+        router.push('Session')    
     }
 
     const leaderBoardButton = ():void => {
@@ -22,11 +23,17 @@ const Navbar:React.FC = () => {
         router.push('Homepage')
     }
 
+    const LoginButton = ():void => {
+        router.push('Login')
+    }
+
     return (
         <div>
             <HStack justifyContent={"center"} bg={"black"} padding={"15px"}>
                 <Flex display={"flex"}>
                     <HStack width={"1000px"}>
+                        <Spacer/>
+                        <Box> <Login_button func={LoginButton}/> </Box>
                         <Spacer/>
                         <Box> <Homepage_button func={homePageButton}/> </Box>
                         <Spacer/>
