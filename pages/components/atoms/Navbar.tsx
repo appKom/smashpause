@@ -24,7 +24,7 @@ const Navbar:React.FC = () => {
 
     return (
         <div>
-            <HStack justifyContent={"center"} bg={"black"} padding={"10px"}>
+            <HStack justifyContent={"center"} bg={"black"} padding={"15px"}>
                 <Flex display={"flex"}>
                     <HStack width={"1000px"}>
                         <Spacer/>
