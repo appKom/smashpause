@@ -10,8 +10,7 @@ const Session:React.FC = () => {
     return (
         <div>
             <Navbar/>
-            <h1>Sessions
-            </h1>
+        
             <SessionCreate/>
         </div>
 

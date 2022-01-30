@@ -20,7 +20,6 @@ const Session:React.FC = () => {
         
         <div>
             <Navbar/>
-            <h1>LeaderBoard</h1>
             <Leaderboard/>
         </div>
     )
