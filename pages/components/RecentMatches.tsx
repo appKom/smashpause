@@ -11,7 +11,7 @@ const RecentMatches:React.FC = () => {
         {navn: "Robin", player: "Luigi"},
         {navn: "Sander", player: "Picachu"}
     ]
-    const name = "matias";
+
 
     return (
         <div>
