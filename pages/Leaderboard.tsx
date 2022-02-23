@@ -47,7 +47,8 @@ const Leaderboard: NextPage = () => {
                 textAlign={"center"}
                 boxShadow={"1px 1px 10px 10px lightblue"}
                 padding={"1%"}    
-                colorScheme={"teal"}            
+                colorScheme={"teal"}
+                           
             >
                 <Thead 
                     border={"1px solid black"}
@@ -76,6 +77,7 @@ const Leaderboard: NextPage = () => {
                     }
                 </Tbody>
             </Table>
+            
         </div>
     )
 }
