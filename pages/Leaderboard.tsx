@@ -1,4 +1,4 @@
-import { Heading } from '@chakra-ui/react'
+import { Heading, ListItem, OrderedList } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import { Key, useEffect, useState } from 'react'
 import styles from '../styles/Leaderboard.module.css'
@@ -41,18 +41,17 @@ const Leaderboard: NextPage = () => {
     return (
         <div className={styles.container}>
             <Table
-                marginTop={"15%"}
-                width={"23%"} 
+                marginTop={"5%"}
+                width={"40%"} 
                 variant='simple'
                 textAlign={"center"}
-                boxShadow={"1px 1px 10px 10px lightblue"}
+                boxShadow={"1px 1px 5px black"}
                 padding={"1%"}    
                 colorScheme={"teal"}
-                           
+                
+                             
             >
-                <Thead 
-                    border={"1px solid black"}
-                >
+                <Thead >
                     <Tr
                         color={"#2066D7"}
                         fontSize={"30"}
@@ -63,6 +62,8 @@ const Leaderboard: NextPage = () => {
                 </Thead>
                 <Tbody
                     color={"#515458"}
+                    fontSize={18}
+                    
                 >
                     {
                         users
@@ -70,11 +71,16 @@ const Leaderboard: NextPage = () => {
                             return b.rank - a.rank
                         })
                         .map((user: { id: Key | null | undefined; owID: string; rank: string; }) => {
-                        return <Tr key={ user.id }>
-                                    <Td>{user.owID}</Td><Td>{user.rank}</Td>
+                        return <Tr 
+                                key={ user.id }
+                                
+                                
+                                >
+                                        <Td>{user.owID}</Td> <Td>{user.rank}</Td>
                                 </Tr>
                         })
                     }
+                    
                 </Tbody>
             </Table>
             
