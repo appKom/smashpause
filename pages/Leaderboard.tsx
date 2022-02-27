@@ -17,6 +17,8 @@ const Leaderboard: NextPage = () => {
     
     // Trenger et interface på denne
     const [users, setUsers] = useState<any>([])
+    let [counter, setCounter] = useState<any>(0)
+    
 
     /*
         Fetcher alle brukere til JSON format,
@@ -38,6 +40,7 @@ const Leaderboard: NextPage = () => {
         (async () => await getUsers())();
     }, [])
 
+
     return (
         <div className={styles.container}>
             <Table
@@ -48,14 +51,16 @@ const Leaderboard: NextPage = () => {
                 boxShadow={"1px 1px 5px black"}
                 padding={"1%"}    
                 colorScheme={"teal"}
-                
-                             
+                    
             >
                 <Thead >
                     <Tr
                         color={"#2066D7"}
                         fontSize={"30"}
                     >
+                        <Th
+                        padding={10}
+                        >#</Th>
                         <Th>Name</Th>
                         <Th>Points</Th>
                     </Tr>
@@ -63,24 +68,23 @@ const Leaderboard: NextPage = () => {
                 <Tbody
                     color={"#515458"}
                     fontSize={18}
-                    
                 >
                     {
+                        
                         users
                         .sort((a: { rank: number; }, b: { rank: number; }) => {
                             return b.rank - a.rank
                         })
                         .map((user: { id: Key | null | undefined; owID: string; rank: string; }) => {
-                        return <Tr 
-                                key={ user.id }
-                                
-                                
+                        return <Tr
+                                    key={ user.id }
                                 >
-                                        <Td>{user.owID}</Td> <Td>{user.rank}</Td>
+                                        <Td
+                                        padding={5}
+                                        >{counter += 1}.</Td><Td>{user.owID}</Td> <Td>{user.rank}</Td>
                                 </Tr>
                         })
                     }
-                    
                 </Tbody>
             </Table>
             
