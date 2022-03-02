@@ -13,7 +13,7 @@ import {
     TableCaption,
   } from '@chakra-ui/react'
 
-const Leaderboard: NextPage = () => {
+const recentMatches: NextPage = () => {
     
     // Trenger et interface på denne
     const [users, setUsers] = useState<any>([])
@@ -43,7 +43,7 @@ const Leaderboard: NextPage = () => {
             <Table
                 marginTop={"5%"}
                 width={"40%"} 
-                variant='simple'
+                variant='striped'
                 textAlign={"center"}
                 boxShadow={"1px 1px 5px black"}
                 padding={"1%"}    
@@ -53,8 +53,8 @@ const Leaderboard: NextPage = () => {
             >
                 <Thead >
                     <Tr
-                        color={"#2066D7"}
-                        fontSize={"30"}
+                        color={"red"}
+                        fontSize={"50"}
                     >
                         <Th>Name</Th>
                         <Th>Points</Th>
@@ -63,7 +63,6 @@ const Leaderboard: NextPage = () => {
                 <Tbody
                     color={"#515458"}
                     fontSize={18}
-                    
                 >
                     {
                         users
@@ -73,8 +72,6 @@ const Leaderboard: NextPage = () => {
                         .map((user: { id: Key | null | undefined; owID: string; rank: string; }) => {
                         return <Tr 
                                 key={ user.id }
-                                
-                                
                                 >
                                         <Td>{user.owID}</Td> <Td>{user.rank}</Td>
                                 </Tr>
@@ -88,4 +85,4 @@ const Leaderboard: NextPage = () => {
     )
 }
 
-export default Leaderboard
+export default recentMatches
